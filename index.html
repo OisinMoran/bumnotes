@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bum Notes - We make up musicals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Playfair:opsz,wght@5..1200,400;5..1200,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Playfair', serif;
+            line-height: 1.2;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+
+        header {
+            text-align: center;
+/*            padding: 40px 20px;*/
+        }
+
+        a {
+            color: #a8ff3a;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        h1, h2, h3 {
+            margin-top: 24px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            font-style: normal;
+            font-optical-sizing: auto;
+        }
+
+        .subtitle {
+            font-size: 2rem;
+            color: #ccc;
+            margin-bottom: 40px;
+/*            font-style: italic;*/
+            font-family: 'Playfair', serif;
+        }
+
+        section {
+/*            margin: 60px 0;*/
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .show-entry {
+            text-align: center;
+/*            margin: 30px 0;*/
+            font-size: 1.3rem;
+        }
+
+        .show-title {
+            font-weight: 600;
+        }
+
+        .show-date {
+            margin-bottom: 20px;
+        }
+
+
+        .countdown {
+            font-size: 1rem;
+            margin: 30px 0;
+            font-weight: bold;
+            color: #a8ff3a;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .countdown-label {
+/*            font-size: 1rem;*/
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        .poster-link {
+            display: block;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .poster {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            border: 2px solid #aaa;
+        }
+
+        .poster-link:hover .poster {
+            filter: brightness(0.7);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 2px 8px;
+            background-color: #a8ff3a;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+/*            font-size: 1.2rem;*/
+            margin: 8px 0;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .section-placeholder {
+            min-height: 200px;
+            border: 2px dashed #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .newsletter-container, .contact-container, .reviews-container, .about-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .countdown {
+                font-size: 1.8rem;
+            }
+
+            .poster-link {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Bum Notes</h1>
+            <p class="subtitle">We make up musicals</p>
+        </header>
+
+        <section id="next-show">
+            <h2>Next Show</h2>
+            <div class="show-entry">
+                <span class="show-title">The Improvised OoOoOoOosical</span> · 
+                <span class="show-date">Oct 29th @ 8PM</span>
+            <br>
+                <span id="countdown" class="countdown"></span>
+                <span class="countdown-label">until showtime</span>
+                <a href="https://smockalley.com/the-improvised-oooooooosical/" class="btn" target="_blank">Buy Tickets · €15</a>
+                <a href="https://smockalley.com/the-improvised-oooooooosical/" class="poster-link" target="_blank">
+                    <img src="2025-10-29-poster.png" alt="The Improvised Oooooooosical Poster" class="poster">
+                </a>
+            </div>
+        </section>
+
+        
+        <section id="reviews">
+            <h2>Reviews & Reactions</h2>
+            <div class="reviews-container">
+                <div class="review-item">
+                    "The hottest comedy ticket in town" - <a href="https://web.archive.org/web/20240911081402/https://www.irishtimes.com/culture/stage/2024/09/11/i-used-to-swallow-my-tongue-at-meetings-now-ill-stand-up-in-front-of-any-crowd-want-to-know-what-made-the-difference/">The Irish Times</a>
+                </div>
+                <div class="review-item">
+                    "I want more" - <a href="https://northwestend.com/raintown-and-bumnotes-scottish-storytelling-centre">North West End UK</a>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-container">
+                <p>
+                    Bum Notes is a tightly-knit improvised musical troupe based in Dublin that have been performing sell-out shows roughly once a month since the start of 2023. We debuted at the Scene + Heard festival of new work, and have performed at the Dublin Fringe Festival (twice), the Edinburgh Improv Festival, and even Electric Picnic. Our most frequented venue is the wonderful Smock Alley Theatre, but we've also trod the boards of The Sugar Club, and even put on Ireland's biggest ever homegrown fully-improvised show to a packed out Royal Irish Academy of Music.
+                </p>
+                <p>
+                    We begin every show by taking a suggestion from the audience. This can be in the form of just the title for a musical that doesn't exist (our standard format), an interview with an audience member (for our "You: The Improvised Musical", Dublin Fringe 2024), a year (for our "Bum Notes' Eras Tour", Dublin Fringe 2025), or a whole bunch of stuff (for our "Pick 'n' Mix" kids show we also did for Dublin Fringe 2025). We then make up an entire musical on the spot based around what we've been given. All the characters, lyrics, melodies, plot, harmonies, dance numbers, are all fully improvised. They have never been seen nor heard before, and never will be again. 
+                </p>
+            </div>
+        </section>
+
+        
+
+        <section id="newsletter">
+            <h2>Newsletter</h2>
+            <div class="newsletter-container">
+                <p>Be the first to hear about our upcoming shows! Our email newsletter subscribers get a 24-hour headstart for new event releases before we post them anywhere else.</p>
+                <script async src="https://eomail5.com/form/476cb9fa-a208-11f0-84df-356566942cac.js" data-form="476cb9fa-a208-11f0-84df-356566942cac"></script>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <p>If you'd like to get in touch about working together we'd love to hear from you. We offer private & corporate gigs, and love a good festival.</p>
+                <p>
+                Email: hey@bumnotesmusical.com <br>
+                Instagram: <a href="https://www.instagram.com/bumnotesmusical/">@bumnotesmusical</a>
+            </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const showDate = new Date('2025-10-29T20:00:00');
+            const now = new Date();
+            const diff = showDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = 'Show is live!';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML =
+                `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
