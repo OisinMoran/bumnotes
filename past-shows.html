@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Shows · Bum Notes</title>
+    <meta name="description" content="A complete archive of Bum Notes improvised musical performances since 2024.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍑</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Playfair:opsz,wght@5..1200,400;5..1200,700&family=JetBrains+Mono:wght@400;700&family=UnifrakturMaguntia&family=Creepster&family=Orbitron:wght@700&family=Rye&family=Caesar+Dressing&family=Metal+Mania&family=Barriecito&family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Playfair', serif;
+            line-height: 1.2;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 80px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #a8ff3a;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .shows-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .shows-table thead {
+            border-bottom: 2px solid #333;
+        }
+
+        .shows-table th {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            padding: 15px 10px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .shows-table td {
+            padding: 20px 10px;
+            border-bottom: 1px solid #222;
+            vertical-align: top;
+        }
+
+        .shows-table tr:hover {
+            background-color: #111;
+        }
+
+        .show-date {
+            font-family: 'JetBrains Mono', monospace;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .show-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        .theme-historical {
+            font-family: 'UnifrakturMaguntia', cursive;
+        }
+
+        .theme-horror {
+            font-family: 'Creepster', cursive;
+        }
+
+        .theme-scifi {
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .theme-western {
+            font-family: 'Rye', cursive;
+        }
+
+        .theme-greek {
+            font-family: 'Caesar Dressing', cursive;
+        }
+
+        .theme-metal {
+            font-family: 'Metal Mania', cursive;
+        }
+
+        .theme-kids {
+            font-family: 'Barriecito', cursive;
+        }
+
+        .theme-christmas {
+            font-family: 'Mountains of Christmas', cursive;
+        }
+
+        .show-name {
+            color: #ccc;
+        }
+
+        .show-venue {
+            color: #888;
+        }
+
+        .show-festival {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .festival-badge {
+            display: inline-block;
+            background-color: #eee;
+            color: #222;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 0 20px;
+            font-size: 1.5rem;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .shows-table {
+                font-size: 0.9rem;
+            }
+
+            .shows-table thead {
+                display: none;
+            }
+
+            .shows-table tr {
+                display: block;
+                margin-bottom: 30px;
+                border-bottom: 2px solid #333;
+                padding-bottom: 20px;
+            }
+
+            .shows-table td {
+                display: block;
+                padding: 5px 0;
+                border: none;
+            }
+
+            .shows-table td:first-child {
+                margin-bottom: 10px;
+            }
+
+            .show-title {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="/" class="back-link">← Back to Home</a>
+            <h1>Past Shows</h1>
+        </header>
+
+        <table class="shows-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Musical Title</th>
+                    <th>Show</th>
+                    <th>Festival</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody id="shows-body">
+                <!-- Shows will be loaded here by JavaScript -->
+            </tbody>
+        </table>
+
+        <footer>
+            🍑🎵
+        </footer>
+    </div>
+
+    <script>
+        async function loadShows() {
+            try {
+                const response = await fetch('shows.json');
+                const shows = await response.json();
+                const tbody = document.getElementById('shows-body');
+
+                shows.forEach(show => {
+                    const row = document.createElement('tr');
+
+                    // Format date
+                    const date = new Date(show.date + 'T00:00:00');
+                    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+                    const day = String(date.getDate()).padStart(2, '0');
+                    const month = months[date.getMonth()];
+                    const year = date.getFullYear();
+                    const formattedDate = `${day} ${month} ${year}`;
+
+                    const festivalBadge = show.festival
+                        ? `<span class="festival-badge">${show.festival.toUpperCase()}</span>`
+                        : '';
+
+                    // Determine theme based on title or show
+                    let themeClass = '';
+                    const title = show.title.toLowerCase();
+
+                    if (/^\d{3,4}:|426:|999:|1473:|1966:/.test(show.title)) {
+                        themeClass = 'theme-historical';
+                    } else if (/zombie/i.test(title)) {
+                        themeClass = 'theme-horror';
+                    } else if (/cyborg/i.test(title)) {
+                        themeClass = 'theme-scifi';
+                    } else if (/cowboy/i.test(title)) {
+                        themeClass = 'theme-western';
+                    } else if (/greece/i.test(title)) {
+                        themeClass = 'theme-greek';
+                    } else if (/death metal/i.test(title)) {
+                        themeClass = 'theme-metal';
+                    } else if (/winter candy mountain/i.test(title)) {
+                        themeClass = 'theme-christmas';
+                    } else if (/pick 'n' mix/i.test(show.show)) {
+                        themeClass = 'theme-kids';
+                    }
+
+                    row.innerHTML = `
+                        <td class="show-date">${formattedDate}</td>
+                        <td>
+                            <div class="show-title ${themeClass}">${show.title}</div>
+                        </td>
+                        <td class="show-name">${show.show}</td>
+                        <td class="show-festival">${festivalBadge}</td>
+                        <td class="show-venue">${show.venue}</td>
+                    `;
+
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error loading shows:', error);
+            }
+        }
+
+        loadShows();
+    </script>
+</body>
+</html>
