@@ -153,6 +153,10 @@
             font-weight: 600;
         }
 
+        .mobile-only {
+            display: none;
+        }
+
         footer {
             text-align: center;
             padding: 80px 0 20px;
@@ -175,23 +179,47 @@
 
             .shows-table tr {
                 display: block;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
                 border-bottom: 2px solid #333;
-                padding-bottom: 20px;
+                padding-bottom: 15px;
             }
 
             .shows-table td {
                 display: block;
-                padding: 5px 0;
+                padding: 3px 0;
                 border: none;
             }
 
-            .shows-table td:first-child {
-                margin-bottom: 10px;
+            .desktop-date,
+            .desktop-show {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+            }
+
+            .show-date-festival {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 8px;
+            }
+
+            .show-info {
+                font-size: 1.1rem;
+                margin-top: 5px;
             }
 
             .show-title {
                 font-size: 1.4rem;
+                margin-bottom: 3px;
+            }
+
+            /* Hide festival and venue cells on mobile - shown in combined layout */
+            .shows-table .show-festival,
+            .shows-table .show-venue {
+                display: none;
             }
         }
     </style>
@@ -268,11 +296,20 @@
                     }
 
                     row.innerHTML = `
-                        <td class="show-date">${formattedDate}</td>
+                        <td class="show-date">
+                            <span class="desktop-date">${formattedDate}</span>
+                            <div class="show-date-festival mobile-only">
+                                <span>${formattedDate}</span>
+                                ${festivalBadge}
+                            </div>
+                        </td>
                         <td>
                             <div class="show-title ${themeClass}">${show.title}</div>
                         </td>
-                        <td class="show-name">${show.show}</td>
+                        <td class="show-name">
+                            <span class="desktop-show">${show.show}</span>
+                            <div class="show-info mobile-only">${show.show} · ${show.venue}</div>
+                        </td>
                         <td class="show-festival">${festivalBadge}</td>
                         <td class="show-venue">${show.venue}</td>
                     `;
