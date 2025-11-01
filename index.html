@@ -7,6 +7,11 @@
     <meta name="description" content="We make up musicals on the spot, for your pleasure!">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍑</text></svg>">
 
+        <!-- Add tex-linebreak -->
+    <script src="https://unpkg.com/tex-linebreak@0.7.1/dist/tex-linebreak.min.js"></script>
+    <!-- Add hyphenation patterns -->
+    <script src="https://unpkg.com/hyphenation.en-us/dist/browser.js"></script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bumnotesmusical.com/">
@@ -246,10 +251,10 @@
         <section id="about">
             <h2>About</h2>
             <div class="about-container">
-                <p>
+                <p class="justify">
                     Bum Notes is a tightly-knit improvised musical troupe based in Dublin that have been performing sell-out shows roughly once a month since the start of 2024. We debuted at the Scene + Heard festival of new work, and have performed at the Dublin Fringe Festival (twice), the Edinburgh Improv Festival, and even Electric Picnic. Our most frequented venue is the wonderful Smock Alley Theatre, but we've also trod the boards of The Sugar Club, and even put on Ireland's biggest ever homegrown fully-improvised show to a sold out Royal Irish Academy of Music.
                 </p>
-                <p>
+                <p class="justify">
                     We begin every show by taking a suggestion from the audience. This can be in the form of just the title for a musical that doesn't exist (our standard format), an interview with an audience member (for our "You: The Improvised Musical", Dublin Fringe 2024), a year (for our "Bum Notes' Eras Tour", Dublin Fringe 2025), or a whole bunch of stuff (for our "Pick 'n' Mix" kids show we also did for Dublin Fringe 2025). We then make up an entire musical on the spot based around what we've been given. All the characters, lyrics, melodies, plot, harmonies, and occasional dance numbers are all fully improvised. They have never been seen nor heard before, and never will be again.
                 </p>
                 <p>
@@ -263,7 +268,7 @@
         <section id="newsletter">
             <h2>Newsletter</h2>
             <div class="newsletter-container">
-                <p>Be the first to hear about our upcoming shows! Our email newsletter subscribers get a 24-hour headstart for new event releases before we post them anywhere else.</p>
+                <p class="justify">Be the first to hear about our upcoming shows! Our email newsletter subscribers get a 24-hour headstart for new event releases before we post them anywhere else.</p>
                 <script async src="https://eomail5.com/form/476cb9fa-a208-11f0-84df-356566942cac.js" data-form="476cb9fa-a208-11f0-84df-356566942cac"></script>
             </div>
         </section>
@@ -271,7 +276,7 @@
         <section id="contact">
             <h2>Contact</h2>
             <div class="contact-container">
-                <p>If you'd like to get in touch about working together we'd love to hear from you! We can craft a musical on the spot just for you, with a private show (perhaps celebrating a person or relationship), a corporate gig (where we ask the audience some questions about what your company does, who your competitors are etc. and make up a whole musical about it all), or something else entirely—just ask! We also love a good festival.</p>
+                <p class="justify">If you'd like to get in touch about working together we'd love to hear from you! We can craft a musical on the spot just for you, with a private show (perhaps celebrating a person or relationship), a corporate gig (where we ask the audience some questions about what your company does, who your competitors are etc. and make up a whole musical about it all), or something else entirely—just ask! We also love a good festival.</p>
                 <p>
                 Email: <a href="mailto:hey@bumnotesmusical.com">hey@bumnotesmusical.com</a> <br>
                 Instagram: <a href="https://www.instagram.com/bumnotesmusical/">@bumnotesmusical</a>
@@ -285,27 +290,98 @@
     </div>
 
     <script>
-        function updateCountdown() {
-            const showDate = new Date('2025-10-30T20:00:00');
-            const now = new Date();
-            const diff = showDate - now;
+        // function updateCountdown() {
+        //     const showDate = new Date('2025-10-30T20:00:00');
+        //     const now = new Date();
+        //     const diff = showDate - now;
 
-            if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = 'Show is live!';
-                return;
-            }
+        //     if (diff <= 0) {
+        //         document.getElementById('countdown').innerHTML = 'Show is live!';
+        //         return;
+        //     }
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        //     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        //     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        //     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        //     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown').innerHTML =
-                `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        //     document.getElementById('countdown').innerHTML =
+        //         `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        // }
+
+        // updateCountdown();
+        // setInterval(updateCountdown, 1000);
+
+        var libScript = document.createElement('script');
+        libScript.src = 'https://unpkg.com/tex-linebreak';
+        document.body.appendChild(libScript);
+
+        var dictScript = document.createElement('script');
+        dictScript.src = 'https://unpkg.com/tex-linebreak/dist/hyphens_en-us.js';
+        document.body.appendChild(dictScript);
+
+        var libLoaded = new Promise(resolve => libScript.onload = resolve);
+        var dictLoaded = new Promise(resolve => dictScript.onload = resolve);
+
+        // Store original text content using WeakMap to track elements
+        var originalContent = new WeakMap();
+
+        function justifyContent() {
+            // Store current scroll position
+            const scrollPos = window.scrollY;
+
+            var lib = window.texLineBreak_lib;
+            var h = lib.createHyphenator(window['texLineBreak_hyphens_en-us']);
+            var paras = [...document.querySelectorAll('p.justify')];
+
+            paras.forEach(p => {
+                // Save original content if not already saved
+                if (!originalContent.has(p)) {
+                    originalContent.set(p, p.innerHTML);
+                } else {
+                    // Restore original content before re-justifying
+                    p.innerHTML = originalContent.get(p);
+                    // Clear any inline styles that were added
+                    p.removeAttribute('style');
+                    // Remove any style attributes from child elements
+                    p.querySelectorAll('[style]').forEach(el => el.removeAttribute('style'));
+                }
+            });
+
+            // Force reflow to ensure widths are recalculated
+            void paras[0]?.offsetHeight;
+
+            // Apply justification
+            lib.justifyContent(paras, h);
+
+            // Restore scroll position
+            window.scrollTo(0, scrollPos);
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        Promise.all([libLoaded, dictLoaded]).then(() => {
+            justifyContent();
+            
+            // Add resize event listener with debouncing and orientation check
+            let timeout;
+            let lastWidth = window.innerWidth;
+            
+            window.addEventListener('resize', () => {
+                // Only recalculate if width actually changed (avoid keyboard triggers)
+                if (window.innerWidth !== lastWidth) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => {
+                        lastWidth = window.innerWidth;
+                        justifyContent();
+                    }, 150);
+                }
+            });
+
+            // Handle orientation changes explicitly
+            window.addEventListener('orientationchange', () => {
+                clearTimeout(timeout);
+                timeout = setTimeout(justifyContent, 150);
+            });
+        }).catch(err => console.error(err));
     </script>
 </body>
 </html>
