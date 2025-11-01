@@ -34,6 +34,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Playfair:opsz,wght@5..1200,400;5..1200,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --accent-color: #ff8c42;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -70,7 +74,7 @@
         }
 
         a {
-            color: #a8ff3a;
+            color: var(--accent-color);
         }
 
         p {
@@ -129,7 +133,7 @@
             font-size: 1rem;
             margin: 30px 0;
             font-weight: bold;
-            color: #a8ff3a;
+            color: var(--accent-color);
             font-family: 'JetBrains Mono', monospace;
         }
 
@@ -196,6 +200,30 @@
         .reviews-container {
             font-weight: 900;
             font-size: 1.6rem;
+        }
+
+        /* Hide EmailOctopus branding */
+        #newsletter > div > div > div > div.text-center {
+            display: none !important;
+        }
+
+        /* Style EmailOctopus subscribe button */
+        button[type="submit"],
+        input[type="submit"],
+        .eo-block-container button {
+            background-color: #ff8c42 !important;
+            color: #000 !important;
+            border: none !important;
+            padding: 8px 16px !important;
+            border-radius: 5px !important;
+            font-weight: 700 !important;
+            cursor: pointer !important;
+        }
+
+        button[type="submit"]:hover,
+        input[type="submit"]:hover,
+        .eo-block-container button:hover {
+            background-color: #e67a32 !important;
         }
 
         @media (max-width: 768px) {
