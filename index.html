@@ -35,7 +35,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Playfair:opsz,wght@5..1200,400;5..1200,700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --accent-color: #ff8c42;
+            --accent-color: red;
+            --dark-accent-color: darkred;
         }
 
         * {
@@ -75,6 +76,10 @@
 
         a {
             color: var(--accent-color);
+        }
+
+        a:hover {
+            color: var(--dark-accent-color);
         }
 
         p {
@@ -174,7 +179,8 @@
         }
 
         .btn:hover {
-            background-color: darkred;
+            color: black;
+            background-color: var(--dark-accent-color);
         }
 
         .section-placeholder {
@@ -211,7 +217,7 @@
         button[type="submit"],
         input[type="submit"],
         .eo-block-container button {
-            background-color: #ff8c42 !important;
+            background-color: var(--accent-color) !important;
             color: #000 !important;
             border: none !important;
             padding: 8px 16px !important;
@@ -223,7 +229,7 @@
         button[type="submit"]:hover,
         input[type="submit"]:hover,
         .eo-block-container button:hover {
-            background-color: #e67a32 !important;
+            background-color: var(--dark-accent-color) !important;
         }
 
         @media (max-width: 768px) {
@@ -259,9 +265,28 @@
         <img src="bn-og-twitter.jpg" alt="Bum Notes - We make up musicals" class="header-image">
 
         <section id="next-show">
-            <h2>Next Show</h2>
+            <h2>Upcoming Shows</h2>
             <div class="show-entry">
-                <span class="show-title">TBA—sign up to our newsletter below to be the first to hear!</span>
+                <span class="show-title">❤️ YOUS: An Improvised Romantic Musical ❤️</span>
+                <span class="show-date">Feb 15th @ 8PM ❤️</span>
+            <br>
+<!--                 <span id="countdown" class="countdown"></span>
+                <span class="countdown-label">until showtime</span> -->
+                <a href="https://www.ticketsource.com/bumnotes/yous-an-improvised-romantic-musical/e-xpqzdx" class="btn" target="_blank">ADMIT TWO</a>
+                <a href="https://www.ticketsource.com/bumnotes/yous-an-improvised-romantic-musical/e-xpqzdx" class="poster-link" target="_blank">
+                    <img src="YOUS_GRID.png" alt="YOUS: An Improvised Romantic Musical Poster" class="poster">
+                </a>
+            </div>
+            <div class="show-entry">
+                <span class="show-title">FEB 25 - TBA</span>
+
+            </div>
+            <div class="show-entry">
+                <span class="show-title">MAR 25 - TBA</span>
+
+            </div>
+            <div class="show-entry">
+                <span class="show-title">APR 12 - TBA</span>
             </div>
         </section>
 
