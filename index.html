@@ -265,28 +265,17 @@
         <img src="bn-og-twitter.jpg" alt="Bum Notes - We make up musicals" class="header-image">
 
         <section id="next-show">
-            <h2>Upcoming Shows</h2>
+            <h2>Next Show</h2>
             <div class="show-entry">
-                <span class="show-title">❤️ YOUS: An Improvised Romantic Musical ❤️</span>
-                <span class="show-date">Feb 15th @ 8PM ❤️</span>
+                <span class="show-title">The Improvised Musical</span> · 
+                <span class="show-date">Nov 5th @ 7:30PM</span>
             <br>
-<!--                 <span id="countdown" class="countdown"></span>
-                <span class="countdown-label">until showtime</span> -->
-                <a href="https://www.ticketsource.com/bumnotes/yous-an-improvised-romantic-musical/e-xpqzdx" class="btn" target="_blank">ADMIT TWO</a>
-                <a href="https://www.ticketsource.com/bumnotes/yous-an-improvised-romantic-musical/e-xpqzdx" class="poster-link" target="_blank">
-                    <img src="YOUS_GRID.png" alt="YOUS: An Improvised Romantic Musical Poster" class="poster">
+                <span id="countdown" class="countdown"></span>
+                <span class="countdown-label">until showtime</span>
+                <a href="https://smockalley.com/bum-notes-the-improvised-musical/" class="btn" target="_blank">Get tickets · €19</a>
+                <a href="https://smockalley.com/bum-notes-the-improvised-musical/" class="poster-link" target="_blank">
+                    <img src="2026-11-05-poster.png" alt="The Improvised Musical Poster" class="poster">
                 </a>
-            </div>
-            <div class="show-entry">
-                <span class="show-title">FEB 25 - TBA</span>
-
-            </div>
-            <div class="show-entry">
-                <span class="show-title">MAR 25 - TBA</span>
-
-            </div>
-            <div class="show-entry">
-                <span class="show-title">APR 12 - TBA</span>
             </div>
         </section>
 
@@ -347,27 +336,27 @@
     </div>
 
     <script>
-        // function updateCountdown() {
-        //     const showDate = new Date('2025-10-30T20:00:00');
-        //     const now = new Date();
-        //     const diff = showDate - now;
+        function updateCountdown() {
+            const showDate = new Date('2026-11-05T19:30:00Z'); // 7:30PM Irish time (GMT in November)
+            const now = new Date();
+            const diff = showDate - now;
 
-        //     if (diff <= 0) {
-        //         document.getElementById('countdown').innerHTML = 'Show is live!';
-        //         return;
-        //     }
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = 'Show is live!';
+                return;
+            }
 
-        //     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        //     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        //     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        //     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        //     document.getElementById('countdown').innerHTML =
-        //         `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-        // }
+            document.getElementById('countdown').innerHTML =
+                `${String(days).padStart(2, '0')}d ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        }
 
-        // updateCountdown();
-        // setInterval(updateCountdown, 1000);
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
 
         var libScript = document.createElement('script');
         libScript.src = 'https://unpkg.com/tex-linebreak';
