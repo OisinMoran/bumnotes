@@ -102,6 +102,23 @@
             font-size: 1.5rem;
         }
 
+        .half-star {
+            background: linear-gradient(90deg, currentColor 50%, rgba(255, 255, 255, 0.25) 50%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .review-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .review-link:hover {
+            text-decoration: underline;
+        }
+
         .theme-historical {
             font-family: 'UnifrakturMaguntia', cursive;
         }
@@ -256,6 +273,11 @@
     </div>
 
     <script>
+        function renderStars(rating) {
+            const half = rating % 1 ? '<span class="half-star">★</span>' : '';
+            return '★'.repeat(Math.floor(rating)) + half;
+        }
+
         async function loadShows() {
             try {
                 const response = await fetch('shows.json');
@@ -309,6 +331,7 @@
                         </td>
                         <td>
                             <div class="show-title ${themeClass}">${show.title}</div>
+                            ${show.review ? `<a href="${show.review}" class="review-link" target="_blank">${show.stars ? renderStars(show.stars) + ' ' : ''}Read review →</a>` : ''}
                         </td>
                         <td class="show-name">
                             <span class="desktop-show">${show.show}</span>

@@ -3,7 +3,9 @@
     "date": "2026-11-05",
     "show": "The Improvised Musical",
     "title": "Jaws",
-    "venue": "Smock Alley Main Space"
+    "venue": "Smock Alley Main Space",
+    "review": "https://www.thereviewshub.com/bum-notes-an-improvised-musical-smock-alley-theatre-dublin/",
+    "stars": 4.5
   },
   {
     "date": "2026-01-07",
@@ -93,7 +95,9 @@
     "show": "The Improvised Musical",
     "title": "Garbage Man",
     "venue": "Scottish Storytelling Centre",
-    "festival": "Edinburgh Improv Fest"
+    "festival": "Edinburgh Improv Fest",
+    "review": "https://northwestend.com/raintown-and-bumnotes-scottish-storytelling-centre",
+    "stars": 4
   },
   {
     "date": "2024-11-14",
