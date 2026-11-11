@@ -262,6 +262,17 @@
 
             .reviews-container {
                 font-size: 1.2rem;
+                gap: 14px;
+            }
+
+            .review-source {
+                display: block;
+                font-size: 1rem;
+                font-weight: 400;
+            }
+
+            .review-dash {
+                display: none;
             }
         }
     </style>
@@ -284,13 +295,16 @@
             <div class="reviews-container">
 
                 <div class="review-item">
-                    “The hottest comedy ticket in town” - <a href="https://web.archive.org/web/20240911081402/https://www.irishtimes.com/culture/stage/2024/09/11/i-used-to-swallow-my-tongue-at-meetings-now-ill-stand-up-in-front-of-any-crowd-want-to-know-what-made-the-difference/">The Irish Times</a>
+                    <span class="review-quote">“The hottest comedy ticket in town”</span>
+                    <span class="review-source"><span class="review-dash">-</span> <a href="https://web.archive.org/web/20240911081402/https://www.irishtimes.com/culture/stage/2024/09/11/i-used-to-swallow-my-tongue-at-meetings-now-ill-stand-up-in-front-of-any-crowd-want-to-know-what-made-the-difference/">The Irish Times</a></span>
                 </div>
                 <div class="review-item">
-                    “Not to be missed” ★★★★<span class="half-star">★</span> - <a href="https://www.thereviewshub.com/bum-notes-an-improvised-musical-smock-alley-theatre-dublin/">The Reviews Hub</a>
+                    <span class="review-quote">“Not to be missed”</span>
+                    <span class="review-source"><span class="review-stars">★★★★<span class="half-star">★</span></span> <span class="review-dash">-</span> <a href="https://www.thereviewshub.com/bum-notes-an-improvised-musical-smock-alley-theatre-dublin/">The Reviews Hub</a></span>
                 </div>
                 <div class="review-item">
-                    “I want more” ★★★★ - <a href="https://northwestend.com/raintown-and-bumnotes-scottish-storytelling-centre">North West End UK</a>
+                    <span class="review-quote">“I want more”</span>
+                    <span class="review-source"><span class="review-stars">★★★★</span> <span class="review-dash">-</span> <a href="https://northwestend.com/raintown-and-bumnotes-scottish-storytelling-centre">North West End UK</a></span>
                 </div>
             </div>
         </section>
